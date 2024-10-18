@@ -1,8 +1,30 @@
-export default function Secao6(){
+import './index.scss'
 
-    return(
+export default function Secao6() {
+
+    return (
         <div className="secao6">
-
+            <div className='rodape'>
+                <div className='logo'>
+                    <img src="/images/logo.png" alt="" width={50} height={50} />
+                    <h1>MBL VIDROS</h1>
+                </div>
+                <div className='contato'>
+                    <h1>Fale Conosco</h1>
+                    <button className='whats'>
+                        <img src="/images/zap.png" alt="" width={30} height={30}/>
+                        Solicitar orçamento
+                    </button>
+                    <button className='instagram'>
+                        <img src="/images/ig-removebg-preview.png" alt="" width={60} height={60}/>
+                        Nossa página
+                    </button>
+                    <h2>e-mail: Marcio_2007-baia@hotmail.com</h2>
+                </div>
+            </div>
+            <div>
+                <footer>Copyright &copy; 2024 MBL vidros</footer>
+            </div>
         </div>
     )
 }
