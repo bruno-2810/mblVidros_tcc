@@ -1,0 +1,69 @@
+.secao3 {
+    background-color: rgb(224, 221, 221);
+    display: flex;
+    flex-direction: column;
+
+    .tudao {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        width: 100%;
+    }
+
+    .porque {
+        background-color: white;
+        color: rgb(46, 46, 233);
+        text-align: center;
+
+    }
+
+    .descricoes {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        margin-left: 5%;
+
+        .experientes {
+            display: flex;
+            width: 100%;
+
+        }
+
+
+        h1 {
+            color: rgb(46, 46, 233);
+
+        }
+        
+        
+        p{
+            margin-top: 1px;
+        }
+
+    }
+
+
+    .descricoespt2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 50%;
+
+        h1 {
+            color: rgb(46, 46, 233);
+        }
+
+        .competitivos{
+            margin-top: 13px;
+        }
+
+        p{
+            margin-top: -6px;
+        }
+
+    }
+
+
+
+}
