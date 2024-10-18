@@ -33,8 +33,6 @@ export default function Secao3(){
                 </div>
             </div>
 
-            
-           
         </div>
     )
 }
