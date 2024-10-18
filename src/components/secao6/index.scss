@@ -1,0 +1,89 @@
+$main-color: linear-gradient(to bottom, #f98125 0%, #fa8e3b 50%, #fb9b50 100%);
+$what-color: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+$kkzy-color: linear-gradient(to bottom, #f98125 0%, #fa8e3b 50%, #fb9b50 100%);
+$kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
+
+.secao6 {
+    background-color: #000c2b;
+    display: flex;
+    flex-direction: column;
+
+    .rodape {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 50px;
+
+        .logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            color: #bdbdbd;
+        }
+
+        .contato {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            color: #c0c0c0;
+
+            .whats {
+                background-image: $kkzy-color;
+                width: 200px;
+                height: 50px;
+                border: 0px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 10px;
+                padding: 20px;
+                font-size: 14px;
+
+
+
+                &:hover {
+                    color: #000000;
+                    border: none;
+                    transform: scale(1.05);
+                    transition: all 0.3s ease;
+                }
+            }
+
+            .instagram {
+                background-image: $what-color;
+                text-decoration: none;
+                color: #ffffff;
+                width: 200px;
+                height: 50px;
+                border-radius: 10px;
+                border: 0px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 10px;
+                padding: auto;
+                font-size: 15px;
+
+
+                &:hover {
+                    border: none;
+                    transform: scale(1.05);
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        color: #fff;
+    }
+}
