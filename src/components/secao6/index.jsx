@@ -6,7 +6,7 @@ export default function Secao6() {
         <div className="secao6">
             <div className='rodape'>
                 <div className='logo'>
-                    <img src="/images/logo.png" alt="" width={50} height={50} />
+                    <img src="/images/logo.png" alt="" width={70} height={70}/>
                     <h1>MBL VIDROS</h1>
                 </div>
                 <div className='contato'>
