@@ -35,6 +35,8 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        margin-right: 100px; 
+        
 
         button {
             background-color: #011b6a;
@@ -42,7 +44,7 @@
             border: 0px;
             border-radius: 5px;
             padding: 10px;
-            width: 100px;
+            width: 70px;
             font-size: 17px;
         }
     }
