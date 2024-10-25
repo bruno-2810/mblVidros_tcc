@@ -1,4 +1,5 @@
 import './index.scss'
+import {useNavigate} from 'react-router-dom'
 
 
 export default function Cabecalho(){
@@ -6,7 +7,7 @@ export default function Cabecalho(){
     const navegacao = useNavigate()
 
     function adm () {
-        navegacao('/')
+        navegacao('/entrar')
     }
 
     return(
