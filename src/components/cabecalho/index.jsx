@@ -3,6 +3,12 @@ import './index.scss'
 
 export default function Cabecalho(){
 
+    const navegacao = useNavigate()
+
+    function adm () {
+        navegacao('/')
+    }
+
     return(
         <div className='cabecalho'>
             <div className='logo'>
@@ -17,7 +23,7 @@ export default function Cabecalho(){
                 <a href="#contato">Contato</a>
             </div>
             <div className='area'>
-                <button>
+                <button onClick={adm}>
                     ADM
                 </button>
             </div>
