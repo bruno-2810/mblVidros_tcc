@@ -4,7 +4,9 @@
     background-color: #ffffff;
     padding: 5px;
     justify-content: space-around;
-    // position: fixed;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 
     .logo {
         display: flex;

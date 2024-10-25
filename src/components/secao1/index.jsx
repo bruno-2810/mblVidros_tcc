@@ -10,7 +10,7 @@ export default function Secao1() {
                     <h1>Bem-vindo à Vidraçaria</h1>
                     <div className='logo'>
                         <img src="/images/logo.png" alt="" width={70} height={70} />
-                        <h1>MBL <br />Vidros</h1>
+                        <h1>MBL Vidros</h1>
                     </div>
                     <h2>Soluções em Vidro com Qualidade e Segurança</h2>
                     <p>Na Vidraçaria MBL Vidros, oferecemos os melhores serviços de instalação e <br />manutenção de vidros para residências e empresas.</p>
