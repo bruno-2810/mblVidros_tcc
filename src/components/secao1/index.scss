@@ -3,28 +3,14 @@
     flex-direction: column;
     align-items: center;
 
+    .imgFundo {
+        background-image: #162f79;
+        opacity: 0.5;
+    }
+
     .textos {
-        margin-top: 100px;
+        color: #fff;
         position: absolute;
-        text-align: center;
         
-    }
-    .logo {
-        display: flex;
-        flex-direction: row;
-
-        h1 {
-
-        }
-
-        img {
-            width: 100px;
-            height: 100px;
-        }
-    }
-
-    img {
-        width: 100%;
-        height: 900px;
     }
 }
