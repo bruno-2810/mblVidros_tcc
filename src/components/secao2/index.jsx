@@ -28,7 +28,7 @@ export default function Secao2() {
 
     return (
 
-        <div className='secao2'>
+        <div className='secao2' id='servicos'>
 
             <div className='titulostyle'>
                 <div className='dourado'></div>

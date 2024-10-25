@@ -4,23 +4,31 @@ $kkzy-color: linear-gradient(to bottom, #f98125 0%, #fa8e3b 50%, #fb9b50 100%);
 $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
 
 .secao6 {
-    background-color: #000c2b;
     display: flex;
     flex-direction: column;
+    padding: 20px 30px;
+    background-color: #000c2b;
 
     .rodape {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        margin-top: 50px;
+        justify-content: space-between;
 
         .logo {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            justify-content: center;
             align-items: center;
             color: #bdbdbd;
+            margin-left: 100px;
+            
+
+            h1 {
+                font-family: "dolce";
+                letter-spacing: 2px;
+                font-size: 50px;
+            }
+            
         }
 
         .contato {
@@ -28,7 +36,6 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
             flex-direction: column;
             gap: 30px;
             color: #c0c0c0;
-            margin-left: 100px;
 
             .whats {
                 background-image: $kkzy-color;

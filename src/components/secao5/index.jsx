@@ -3,9 +3,9 @@ import './index.scss'
 export default function Secao5() {
 
     return (
-        <div class="secao5">
-            <h2>Quem Somos Nós</h2>
-            <div className="sobre">
+        <div className="secao5" id='sobre'>
+            <h2>Sobre nós</h2>
+            <div className="txt">
                 <p>
                     Somos uma empresa especializada em vidraçaria, dedicada a oferecer <br />soluções
                     personalizadas em vidro para residências, comércios e <br />indústrias. Com anos de

@@ -3,11 +3,11 @@ import './index.scss'
 export default function Secao6() {
 
     return (
-        <div className="secao6">
+        <div className="secao6" id='contato'>
             <div className='rodape'>
                 <div className='logo'>
                     <img src="/images/logo.png" alt="" width={70} height={70}/>
-                    <h1>MBL VIDROS</h1>
+                    <h1>MBL <br /> VIDROS</h1>
                 </div>
                 <div className='contato'>
                     <h1>Fale Conosco</h1>

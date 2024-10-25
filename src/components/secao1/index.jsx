@@ -3,24 +3,18 @@ import './index.scss'
 export default function Secao1() {
 
     return (
-        <div className='secao1'>
-            <img className='imgFundo' src="/images/img1.png" alt="" />
-            <div className='textos'>
-                <div>
-                    <h2>Bem vindo a vidracaria</h2>
-                </div>
-                <div className='logo'>
-                    <img src="/images/logo.png" alt="" width={70} height={70} />
-                    <h3>MBL VIDROS</h3>
-                </div>
-                <div>
-                    <h2>Soluções em vidro com qualidade e segurança</h2>
-                </div>
-                <div>
-                    <p>na vidraçaria MBL Vidros oferecemos os melhores serviços de instalação e <br />manutenção de vidros para residências e empresas.</p>
-                </div>
-                <div className='saibaMais'>
-                    <button>Saiba Mais</button>
+        <div className='secao1' id='inicio'>
+            <div className='incio'>
+                <div class="overlay"></div>
+                <div className='content'>
+                    <h1>Bem-vindo à Vidraçaria</h1>
+                    <div className='logo'>
+                        <img src="/images/logo.png" alt="" width={70} height={70} />
+                        <h1>MBL <br />Vidros</h1>
+                    </div>
+                    <h2>Soluções em Vidro com Qualidade e Segurança</h2>
+                    <p>Na Vidraçaria MBL Vidros, oferecemos os melhores serviços de instalação e <br />manutenção de vidros para residências e empresas.</p>
+                    <a href="#" className="botao">Saiba Mais</a>
                 </div>
             </div>
         </div>

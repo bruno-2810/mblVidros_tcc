@@ -1,3 +1,10 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +12,41 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@font-face {
+  font-family: "dolce";
+  src: url("../public/assets/fonts/Dolce\ Vita\ Light.ttf");
+}
+
+@font-face {
+  font-family: "dolce2";
+  src: url("../public/assets/fonts/Dolce\ Vita.ttf");
+}
+
+@font-face {
+  font-family: "champagne";
+  src: url("../public/assets/fonts/Champagne\ &\ Limousines\ Italic.ttf");
+}
+
+@font-face {
+  font-family: "champagne2";
+  src: url("../public/assets/fonts/Champagne\ &\ Limousines.ttf");
+}
+
+@font-face {
+  font-family: "champagne3";
+  src: url("../public/assets/fonts/Champagne\ &\ Limousines\ Bold\ Italic.ttf");
 }

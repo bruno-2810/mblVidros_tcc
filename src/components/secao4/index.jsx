@@ -4,7 +4,7 @@ import './index.scss'
 export default function Secao4() {
 
     return (
-        <div className="secao4">
+        <div className="secao4" id='depoimento'>
 
             <div className='depoimento'>
                 <h1> Depoimento dos clientes: </h1>

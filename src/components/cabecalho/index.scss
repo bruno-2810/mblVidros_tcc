@@ -1,51 +1,52 @@
 .cabecalho {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    padding: 15px;
-    background-color: rgb(255, 255, 255);
-    gap: 300px;
+    background-color: #ffffff;
+    padding: 5px;
+    justify-content: space-around;
+    // position: fixed;
 
     .logo {
         display: flex;
         flex-direction: row;
+ 
 
         h3 {
             display: flex;
             justify-content: center;
             align-items: center;
             color: #1e357b;
+            font-size: 20px;
+            font-family: "dolce";
         }
     }
 
     .links {
         display: flex;
         flex-direction: row;
-        gap: 30px;
-        align-items: flex-end;
+        gap: 20px;
+        align-items: center;
 
         a {
             color: #1e357b;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 17px;
         }
     }
 
     .area {
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        margin-right: 100px; 
-        
+        align-items: center;
+        padding: 18px;
 
         button {
             background-color: #011b6a;
             color: #fff;
             border: 0px;
             border-radius: 5px;
-            padding: 10px;
-            width: 70px;
             font-size: 17px;
+            width: 70px;
+            height: 30px;
         }
     }
 }
