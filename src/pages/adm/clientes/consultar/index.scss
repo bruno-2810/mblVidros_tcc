@@ -1,0 +1,54 @@
+.pagina-consultarclientes{
+    display: flex;
+    flex-direction: column;
+
+    .botoes{
+        align-self: end;
+        margin-right: 80px;
+
+        .acao{
+            background-color: white; 
+            color: #001C53;
+            border: 3px solid #404F63; 
+            padding: 6px 25px;
+            margin-left: 10px; 
+            font-size: 12px; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+        .acao:hover{
+            background-color: #404F63; 
+            color: white; 
+        }
+    }
+
+    .tabela{
+        align-self: center;
+
+        table {
+            width: 1040px;
+            border-collapse: collapse;
+            margin-top: 10px;
+          }
+      
+          th, td {
+            padding: 10px;
+            text-align: left;
+          }
+      
+          th {
+            background-color: #333;
+            color: #ffffff;
+          }
+      
+          td {
+            background-color: #f4f4f4;
+
+            .img{
+                width: 22px;
+                margin-right: 10px;
+            }
+          }
+    }
+}

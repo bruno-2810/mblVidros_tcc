@@ -1,0 +1,16 @@
+.titulo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-top: 50px;
+    line-height: 1;
+
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 26px;
+        font-weight: 450;
+    }
+
+}
