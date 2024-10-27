@@ -4,12 +4,17 @@
     padding: 5px 80px;
     justify-content: space-between;
     background-color: white;
+    width: 100%;
 
     .logo{
         display: flex;
         flex-direction: row;
         align-items: center;
         color: #001C53;
+
+        img{
+            width: 64px;
+        }
     }
 
     .texto{
@@ -25,7 +30,7 @@
             background-color: white; 
             color: #001C53;
             border: 3px solid #404F63; 
-            padding: 10px 40px; 
+            padding: 6px 30px; 
             font-size: 16px; 
             cursor: pointer; 
             border-radius: 4px; 

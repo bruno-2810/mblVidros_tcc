@@ -1,35 +1,54 @@
-import './index.scss'
-import Cabecalhoadm from '../../components/cabecalhoAdm'
-import { useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import Tituloadm from '../../components/tituloadm'
-
+import './index.scss';
+import Cabecalhoadm from '../../components/cabecalhoAdm';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Tituloadm from '../../components/tituloadm';
 
 export default function ClientesConsultar() {
+    const [token, setToken] = useState(null);
+    const [clientes, setClientes] = useState([]);
+    const [filtro, setFiltro] = useState('');
+    const [mostrarFiltro, setMostrarFiltro] = useState(false);
+    const [filtroSelecionado, setFiltroSelecionado] = useState('');
 
-    const [token, setToken] = useState(null)
-    const [clientes, setClientes] = useState([])
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     async function buscar() {
-        const url = `http://localhost:5100/clientes?x-access-token=${token}`;
+        const url = `http://localhost:5100/clientes?filtro=${filtro}&x-access-token=${token}`;
         let resp = await axios.get(url);
-        setClientes(resp.data);
+        const listaClientes = resp.data;
 
+        const clientesOrdenados = ordenarClientes(listaClientes);
+        setClientes(clientesOrdenados);
+    }
+
+    function ordenarClientes(clientes) {
+        if (filtroSelecionado === 'a-z') {
+            return clientes.sort((a, b) => a.nome.localeCompare(b.nome));
+        }
+        if (filtroSelecionado === 'z-a') {
+            return clientes.sort((a, b) => b.nome.localeCompare(a.nome));
+        }
+        if (filtroSelecionado === 'recentes') {
+            return clientes.sort((a, b) => new Date(b.insercao) - new Date(a.insercao));
+        }
+        if (filtroSelecionado === 'antigos') {
+            return clientes.sort((a, b) => new Date(a.insercao) - new Date(b.insercao));
+        }
+        return clientes;
     }
 
     function levaraocadastro() {
-        navigate('/adm/clientes/cadastrar')
+        navigate('/adm/clientes/cadastrar');
     }
 
     function levaraosservicos() {
-        navigate('/adm/servicos')
+        navigate('/adm/servicos');
     }
 
     function levaraoalterar() {
-        navigate('/adm/clientes/alterar')
+        navigate('/adm/clientes/alterar');
     }
 
     async function excluir(id) {
@@ -41,27 +60,63 @@ export default function ClientesConsultar() {
         }
     }
 
-    useEffect(() => {
-        let usu = localStorage.getItem('USUARIO')
-        setToken(usu)
+    function exibirFiltro() {
+        setMostrarFiltro(true);
+    }
 
+    function ocultarFiltro() {
+        setMostrarFiltro(false);
+        buscar()
+    }
 
-        if (usu == 'undefined' || usu == 'null') {
-            navigate('/entrar')
+    function filtrosExibido() {
+        if (mostrarFiltro) {
+            return (
+                <div className='balao-filtro'>
+                    <h3>Classificar</h3>
+                    <div className='btn-filtro'>
+                    <label htmlFor="filtroAZ">A-Z</label>
+                    <input type="checkbox" id="filtroAZ" checked={filtroSelecionado === 'a-z'} onChange={() => setFiltroSelecionado('a-z')} />
+                    </div>
+                    <div className='btn-filtro'>
+                    <label htmlFor="filtroZA">Z-A</label>
+                    <input type="checkbox" id="filtroZA" checked={filtroSelecionado === 'z-a'} onChange={() => setFiltroSelecionado('z-a')} />
+                    </div>
+                    <div className='btn-filtro'>
+                    <label htmlFor="filtroRecentes">Recentes</label>
+                    <input type="checkbox" id="filtroRecentes" checked={filtroSelecionado === 'recentes'} onChange={() => setFiltroSelecionado('recentes')} />
+                    </div>
+                    <div className='btn-filtro'>
+                    <label htmlFor="filtroAntigos">Antigos</label>
+                    <input type="checkbox" id="filtroAntigos" checked={filtroSelecionado === 'antigos'} onChange={() => setFiltroSelecionado('antigos')} />
+                    </div>
+                    <button onClick={ocultarFiltro} className='btn-concluido'>Concluído</button>
+                </div>
+            );
         }
-    }, [])
+        return null;
+    }
 
+    useEffect(() => {
+        let usu = localStorage.getItem('USUARIO');
+        setToken(usu);
+        if (usu === 'undefined' || usu === 'null') {
+            navigate('/entrar');
+        }
+    }, []);
 
     return (
         <div className='pagina-consultarclientes'>
             <Cabecalhoadm />
             <Tituloadm subtitulo="Clientes" titulo="Consultar" />
             <div className='botoes'>
-                <button className='acao' onClick={buscar} >Exibir</button>
-                <button className='acao' onClick={levaraosservicos} >Serviços</button>
+                <button className='acao' onClick={buscar}>Exibir</button>
+                <button className='acao' onClick={levaraosservicos}>Serviços</button>
                 <button className='acao' onClick={levaraocadastro}>Adicionar</button>
-                <button className='acao'>Filtro</button>
+                <button className='acao' onClick={exibirFiltro}>Filtro</button>
+                <div className='filtro-balao'>{mostrarFiltro && filtrosExibido()}</div>
             </div>
+
             <div className='tabela'>
                 <table>
                     <thead>
@@ -74,13 +129,13 @@ export default function ClientesConsultar() {
                     </thead>
                     <tbody>
                         {clientes.map(item => (
-                            <tr>
+                            <tr key={item.id}>
                                 <td>{item.nome}</td>
                                 <td>{item.telefone}</td>
                                 <td>{new Date(item.insercao).toLocaleDateString('pt-BR')}</td>
                                 <td>
-                                    <img src="/images/edit.png" alt="" className='img' onClick={levaraoalterar}/>
-                                    <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.id)}/>
+                                    <img src="/images/edit.png" alt="" className='img' onClick={levaraoalterar} />
+                                    <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.id)} />
                                 </td>
                             </tr>
                         ))}
@@ -88,5 +143,5 @@ export default function ClientesConsultar() {
                 </table>
             </div>
         </div>
-    )
+    );
 }
