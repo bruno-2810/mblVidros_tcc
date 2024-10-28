@@ -142,7 +142,6 @@ export default function ClientesCadastrar() {
                         <label htmlFor="foto">Foto:</label>
                         <input type="file" accept='image/*' onChange={alterarImagem} />
                     </div>
-                    {foto && <img src={foto} alt="Preview" style={{ width: '64px' }} />}
                 </div>
                 <div className='botao'>
                     <button className='btn' onClick={salvar}>Concluir</button>
