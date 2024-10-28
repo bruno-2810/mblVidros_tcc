@@ -47,8 +47,8 @@ export default function ClientesConsultar() {
         navigate('/adm/servicos');
     }
 
-    function levaraoalterar() {
-        navigate('/adm/clientes/alterar');
+    function levaraoalterar(id) {
+        navigate(`/adm/clientes/cadastrar/${id}`);
     }
 
     async function excluir(id) {
@@ -129,12 +129,12 @@ export default function ClientesConsultar() {
                     </thead>
                     <tbody>
                         {clientes.map(item => (
-                            <tr key={item.id}>
+                            <tr className='itemCliente'>
                                 <td>{item.nome}</td>
                                 <td>{item.telefone}</td>
                                 <td>{new Date(item.insercao).toLocaleDateString('pt-BR')}</td>
                                 <td>
-                                    <img src="/images/edit.png" alt="" className='img' onClick={levaraoalterar} />
+                                    <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.id)} />
                                     <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.id)} />
                                 </td>
                             </tr>

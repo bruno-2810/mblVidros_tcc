@@ -1,63 +1,112 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Cabecalhoadm from '../../components/cabecalhoAdm'
-import './index.scss'
-import axios from 'axios'
-
-
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import Cabecalhoadm from '../../components/cabecalhoAdm';
+import './index.scss';
+import axios from 'axios';
 
 export default function ClientesCadastrar() {
+    const [token, setToken] = useState(null);
+    const { id } = useParams();
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [insercao, setInsercao] = useState('');
+    const [foto, setFoto] = useState('');
 
-    const [token, setToken] = useState(null)
+    const navigate = useNavigate();
 
-    const [nome, setNome] = useState('')
-    const [email, setEmail] = useState('')
-    const [telefone, setTelefone] = useState(null)
-    const [endereco, setEndereco] = useState('')
-    const [insercao, setInsercao] = useState(null)
-
-    const navigate = useNavigate()
-
-    async function salvar () {
+    async function salvar() {
         const cliente = {
             "nome": nome,
             "email": email,
             "telefone": telefone,
             "endereco": endereco,
-            "insercao": insercao
-        }
+            "insercao": insercao,
+            "foto": foto
+        };
+    
+        console.log("Dados do Cliente:", cliente); 
 
         if (nome && email && telefone && endereco && insercao) {
-            const url = `http://localhost:5100/cliente?x-access-token=${token}`;
             try {
-                await axios.post(url, cliente);
-                navigate('/adm/clientes'); 
+                if (id) {
+                    const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`
+                    await axios.put(url, cliente);
+                } else {
+                    const url = `http://localhost:5100/cliente?x-access-token=${token}`
+                    await axios.post(url, cliente);
+                }
+                navigate('/adm/clientes');
             } catch (error) {
-                console.error('Erro ao salvar cliente:', error);
+                console.error('Erro ao salvar cliente:', error.response ? error.response.data : error.message);
                 alert('Houve um erro ao salvar o cliente. Tente novamente.');
             }
         } else {
             alert('Por favor, preencha todos os campos obrigatórios.');
         }
     }
+    
 
-    function voltar () {
-        navigate('/adm/clientes')
+    function voltar() {
+        navigate('/adm/clientes');
+    }
+
+    function formatarDataParaInput(dataISO) {
+        const data = new Date(dataISO);
+        const ano = data.getFullYear();
+        const mes = String(data.getMonth() + 1).padStart(2, '0');
+        const dia = String(data.getDate()).padStart(2, '0');
+        return `${ano}-${mes}-${dia}`;
+    }
+
+    async function carregarDadosCliente(id, token) {
+        const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
+        try {
+            const resposta = await axios.get(url);
+            const clientearray = resposta.data;
+            const cliente = clientearray[0];
+            setNome(cliente.nome);
+            setEmail(cliente.email);
+            setTelefone(cliente.telefone);
+            setEndereco(cliente.endereco);
+            setInsercao(formatarDataParaInput(cliente.insercao));
+            setFoto(cliente.foto)
+
+        } catch (error) {
+            console.error('Erro ao carregar dados do cliente:', error);
+        }
+    }
+
+    function alterarImagem(e) {
+        const file = e.target.files[0];
+        
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFoto(reader.result);
+            };
+
+            reader.readAsDataURL(file);
+        }
     }
 
     useEffect(() => {
-        let usu = localStorage.getItem('USUARIO')
-        setToken(usu)
+        const usu = localStorage.getItem('USUARIO');
+        setToken(usu);
 
-
-        if (usu == 'undefined' || usu == 'null') {
-            navigate('/entrar')
+        if (!usu) {
+            navigate('/entrar');
         }
-    }, [])
 
-    function enter (e) {    
-        if (e.key == 'Enter') {
-            salvar()
+        if (id && usu) {
+            carregarDadosCliente(id, usu);
+        }
+    }, []);
+
+    function enter(e) {
+        if (e.key === 'Enter') {
+            salvar();
         }
     }
 
@@ -66,29 +115,34 @@ export default function ClientesCadastrar() {
             <Cabecalhoadm />
             <div className='container'>
                 <div className='titulo'>
-                    <h2>Cadastrar Cliente</h2>
+                    <h2>{id ? "Editar Cliente" : "Cadastrar Cliente"}</h2>
                 </div>
                 <div className='inputs'>
                     <div className='input'>
                         <label htmlFor="nome">Nome:</label>
-                        <input type="text" placeholder='Digite aqui...' onKeyUp={enter} value={nome} onChange={e => setNome(e.target.value)}/>
+                        <input type="text" placeholder='Digite aqui...' onKeyUp={enter} value={nome} onChange={e => setNome(e.target.value)} />
                     </div>
                     <div className='input'>
                         <label htmlFor="email">Email:</label>
-                        <input type="email" placeholder='Digite aqui...' onKeyUp={enter} value={email} onChange={e => setEmail(e.target.value)}/>
+                        <input type="email" placeholder='Digite aqui...' onKeyUp={enter} value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className='input'>
                         <label htmlFor="telefone">Telefone:</label>
-                        <input type="tel" placeholder='(00) 00000-0000' onKeyUp={enter} value={telefone} onChange={e => setTelefone(e.target.value)}/>
+                        <input type="tel" placeholder='(00) 00000-0000' onKeyUp={enter} value={telefone} onChange={e => setTelefone(e.target.value)} />
                     </div>
                     <div className='input'>
                         <label htmlFor="endereco">Endereço:</label>
-                        <input type="text" placeholder='Digite aqui...' value={endereco} onKeyUp={enter} onChange={e => setEndereco(e.target.value)}/>
+                        <input type="text" placeholder='Digite aqui...' value={endereco} onKeyUp={enter} onChange={e => setEndereco(e.target.value)} />
                     </div>
                     <div className='input'>
                         <label htmlFor="insercao">Data Inserção:</label>
-                        <input type="date" value={insercao} onKeyUp={enter} onChange={e => setInsercao(e.target.value)}/>
+                        <input type="date" value={insercao} onKeyUp={enter} onChange={e => setInsercao(e.target.value)} />
                     </div>
+                    <div className='input'>
+                        <label htmlFor="foto">Foto:</label>
+                        <input type="file" accept='image/*' onChange={alterarImagem} />
+                    </div>
+                    {foto && <img src={foto} alt="Preview" style={{ width: '64px' }} />}
                 </div>
                 <div className='botao'>
                     <button className='btn' onClick={salvar}>Concluir</button>
@@ -96,5 +150,5 @@ export default function ClientesCadastrar() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
