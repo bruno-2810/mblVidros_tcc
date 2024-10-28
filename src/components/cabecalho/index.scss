@@ -9,11 +9,15 @@
     width: 100%;
     z-index: 1000;
     
+    
 
     .logo {
         display: flex;
         flex-direction: row;
- 
+        &:hover {
+        scale: 110%;
+        transition: 0.7s;
+        }
 
         h3 {
             display: flex;
@@ -25,16 +29,26 @@
         }
     }
 
+   }
+
+
     .links {
         display: flex;
         flex-direction: row;
         gap: 20px;
         align-items: center;
 
+        
+
         a {
             color: #1e357b;
             text-decoration: none;
             font-size: 17px;
+            &:hover {
+                color: #000; 
+                scale: 110%;
+                transition: 0.7s;
+            }
         }
     }
 
@@ -42,6 +56,10 @@
         display: flex;
         align-items: center;
         padding: 18px;
+        &:hover {
+            scale: 110%;
+            transition: 0.7s;
+        }
 
         button {
             background-color: #011b6a;
@@ -53,4 +71,3 @@
             height: 30px;
         }
     }
-}

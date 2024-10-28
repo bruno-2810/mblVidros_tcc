@@ -4,17 +4,6 @@
     align-items: center;
     justify-content: center;
 
-    .logo {
-        display: flex;
-        align-items: center;
-
-        h1 {
-            font-family: 'dolce2';
-            letter-spacing: 3px;
-            font-size: 38px;
-        }
-        
-    }
 
     .incio {
         position: relative;
@@ -56,6 +45,19 @@
             text-align: center;
             line-height: 25px;
         }
+
+        .logo {
+            display: flex;
+            align-items: center;
+    
+            h1 {
+                font-family: 'dolce';
+                letter-spacing: 3px;
+                font-size: 38px;
+            }
+            
+        }
+    
     }
 
 
