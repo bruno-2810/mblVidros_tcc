@@ -4,6 +4,7 @@ import Entrar from "./pages/entrar";
 import ClientesConsultar from "./pages/adm/clientes/consultar";
 import ClientesCadastrar from "./pages/adm/clientes/cadastrar";
 import ServicosConsultar from "./pages/adm/servicos/consultar";
+import FichaCliente from "./pages/adm/clientes/fichaCliente";
 
 
 export default function Navegacao() {
@@ -17,6 +18,7 @@ export default function Navegacao() {
             <Route path="/adm/servicos" element={<ServicosConsultar />} />
             <Route path="/adm/clientes/cadastrar/:id" element={<ClientesCadastrar />} />
             <Route path="/adm/clientes/cadastrar" element={<ClientesCadastrar />} />
+            <Route path="/adm/cliente/ficha/:id" element={<FichaCliente />} />
         </Routes>
     </BrowserRouter>
     )

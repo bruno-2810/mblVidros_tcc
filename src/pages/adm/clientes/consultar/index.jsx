@@ -97,6 +97,10 @@ export default function ClientesConsultar() {
         return null;
     }
 
+    function levaraFichaCliente(id) {
+        navigate(`/adm/cliente/ficha/${id}`)
+    }
+
     useEffect(() => {
         let usu = localStorage.getItem('USUARIO');
         setToken(usu);
@@ -129,7 +133,7 @@ export default function ClientesConsultar() {
                     </thead>
                     <tbody>
                         {clientes.map(item => (
-                            <tr className='itemCliente'>
+                            <tr className='itemCliente' onClick={() => levaraFichaCliente(item.id)}>
                                 <td>{item.nome}</td>
                                 <td>{item.telefone}</td>
                                 <td>{new Date(item.insercao).toLocaleDateString('pt-BR')}</td>

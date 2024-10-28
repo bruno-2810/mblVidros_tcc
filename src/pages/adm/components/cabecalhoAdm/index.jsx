@@ -14,7 +14,7 @@ export default function Cabecalhoadm() {
         <div className='cabecalhoadm'>
             <div className='logo'>
                 <img src='/images/logoadm.png' />
-                <h2>MBL_Vidros</h2>
+                <h2>MBL <br />Vidros</h2>
             </div>
             <div className='texto'>
                 <h3>Bem vindo, Márcio!</h3>
