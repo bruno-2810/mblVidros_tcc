@@ -1,0 +1,36 @@
+.pagina-fichacliente{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        border-radius: 12px;
+        margin-top: 30px;
+        height: 350px;
+        align-self: center;
+        padding: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        line-height: 1.5;
+
+        p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .textos{
+            padding: 5px 50px;
+        }
+    }
+
+    .img{
+        width: 150px;
+        height: auto;
+        align-self: center;
+        margin-bottom: 15px;
+        border-radius: 20000000px;
+    }
+}

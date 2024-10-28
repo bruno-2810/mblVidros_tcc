@@ -58,8 +58,11 @@
       .img {
         width: 22px;
         margin-right: 10px;
+        z-index: 1000;
       }
     }
+
+
 
     .itemCliente:hover {
       border: 1px solid black;

@@ -27,6 +27,7 @@ export default function ClientesCadastrar() {
         };
     
         console.log("Dados do Cliente:", cliente); 
+        console.log(cliente.foto)
 
         if (nome && email && telefone && endereco && insercao) {
             try {
@@ -64,8 +65,7 @@ export default function ClientesCadastrar() {
         const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
         try {
             const resposta = await axios.get(url);
-            const clientearray = resposta.data;
-            const cliente = clientearray[0];
+            const cliente = resposta.data;
             setNome(cliente.nome);
             setEmail(cliente.email);
             setTelefone(cliente.telefone);
@@ -142,7 +142,6 @@ export default function ClientesCadastrar() {
                         <label htmlFor="foto">Foto:</label>
                         <input type="file" accept='image/*' onChange={alterarImagem} />
                     </div>
-                    {foto && <img src={foto} alt="Preview" style={{ width: '64px' }} />}
                 </div>
                 <div className='botao'>
                     <button className='btn' onClick={salvar}>Concluir</button>
