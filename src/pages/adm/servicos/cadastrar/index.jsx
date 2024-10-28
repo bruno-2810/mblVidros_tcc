@@ -85,7 +85,7 @@ export default function ServicosCadastrar() {
             }
     
             if (id && usu) {
-                carregarDadosCliente(id, usu);
+                carregarDadosServicos(id, usu);
             }
         }, []);
 
@@ -96,9 +96,40 @@ export default function ServicosCadastrar() {
         }
 
 
-    return(
-        <div className='servicos'>
-            
+    return (
+        <div className='pagina-cadastrarservico'>
+            <Cabecalhoadm />
+            <div className='container'>
+                <div className='titulo'>
+                    <h2>{id ? "Editar Serviço" : "Cadastrar Serviço"}</h2>
+                </div>
+                <div className='inputs'>
+                    <div className='input'>
+                        <label htmlFor="nome">Titulo:</label>
+                        <input type="text" placeholder='Digite aqui...' onKeyUp={enter} value={titulo} onChange={e => setTitulo(e.target.value)} />
+                    </div>
+                    <div className='input'>
+                        <label htmlFor="email">Descrição:</label>
+                        <input type="email" placeholder='Digite aqui...' onKeyUp={enter} value={descricao} onChange={e => setDescricao(e.target.value)} />
+                    </div>
+                    <div className='input'>
+                        <label htmlFor="telefone">Cliente:</label>
+                        <input type="tel" placeholder='(00) 00000-0000' onKeyUp={enter} value={cliente} onChange={e => setCliente(e.target.value)} /> 
+                    </div>
+                    <div className='input'>
+                        <label htmlFor="endereco">Data Realização:</label>
+                        <input type="text" placeholder='Digite aqui...' value={realizacao} onKeyUp={enter} onChange={e => setRealizacao(e.target.value)} />
+                    </div>
+                    <div className='input'>
+                        <label htmlFor="insercao">Valor:</label>
+                        <input type="date" value={valor} onKeyUp={enter} onChange={e => setValor(e.target.value)} />
+                    </div>
+                </div>
+                <div className='botao'>
+                    <button className='btn' onClick={salvar}>Concluir</button>
+                    <button className='btn' onClick={voltar}>Voltar</button>
+                </div>
+            </div>
         </div>
     )
 }

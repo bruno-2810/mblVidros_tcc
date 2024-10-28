@@ -1,0 +1,63 @@
+.pagina-cadastrarservico {
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        border-radius: 12px;
+        margin-top: 30px;
+        width: 700px;
+        align-self: center;
+        padding: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        .titulo {
+            align-self: center;
+            margin: 20px 0px 20px 0px;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+
+            .input{
+                display: flex;
+                flex-direction: row;
+                margin-left: 250px;
+                margin-bottom: 10px;
+                input{
+                    width: 200px;
+                    padding: 5px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    .botao{
+        align-self: center;
+        margin: 20px 0px 20px 0px;
+        display: flex;
+        flex-direction: column;
+        .btn{
+            background-color: white; 
+            color: #001C53;
+            border: 3px solid #404F63; 
+            padding: 6px 25px;
+            font-size: 12px; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            transition: background-color 0.3s ease, color 0.3s ease; 
+            margin-bottom: 10px;
+        }
+        .btn:hover{
+            background-color: #404F63; 
+            color: white; 
+        }
+    }
+}

@@ -43,6 +43,7 @@ export default function ClientesCadastrar() {
             } catch (error) {
                 console.error('Erro ao salvar cliente:', error.response ? error.response.data : error.message);
                 alert('Houve um erro ao salvar o cliente. Tente novamente.');
+                console.log(cliente)
             }
         } else {
             alert('Por favor, preencha todos os campos obrigatórios.');
@@ -138,7 +139,7 @@ export default function ClientesCadastrar() {
                     </div>
                     <div className='input'>
                         <label htmlFor="insercao">Data Inserção:</label>
-                        <input type="tel" ref={withMask("99/99/9999")} value={insercao} onKeyUp={enter} onChange={e => setInsercao(e.target.value)} />
+                        <input type="date" ref={withMask("99/99/9999")} value={insercao} onKeyUp={enter} onChange={e => setInsercao(e.target.value)} />
                     </div>
                     <div className='input'>
                         <label htmlFor="foto">Foto:</label>
