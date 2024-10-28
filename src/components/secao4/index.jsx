@@ -13,6 +13,13 @@ export default function Secao4() {
             <div className='tudao'>
                 
                 <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
+                <Card texto="A vidraçaria  MBL vidros transformou minha sala de estar em uma bela parede de vidro. O atendimento foi excelente e o trabalho impecável." pessoa="João S."/>
 
                 <Card texto="Recomendo a Todos! Profissinais competentes e serviço de Primeira Qualidade. Meu escritório ficou moderno e elegante." pessoa="Maria F."/>
 
