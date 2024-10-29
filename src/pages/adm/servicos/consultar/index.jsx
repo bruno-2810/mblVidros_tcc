@@ -19,7 +19,8 @@ export default function ServicosConsultar() {
     const navigate = useNavigate();
 
     async function buscar() {
-        const url = `http://localhost:5100/servicos?filtro=${filtro}&x-access-token=${token}`;
+        console.log(servicos)
+        const url = `http://localhost:5100/orcamentos?filtro=${filtro}&x-access-token=${token}`;
         let resp = await axios.get(url);
         const listaServicos = resp.data;
 
@@ -29,16 +30,16 @@ export default function ServicosConsultar() {
 
     function ordenarServicos(servicos) {
         if (filtroSelecionado === 'a-z') {
-            return servicos.sort((a, b) => a.nome.localeCompare(b.nome));
+            return servicos.sort((a, b) => a.titulo.localeCompare(b.titulo));
         }
         if (filtroSelecionado === 'z-a') {
-            return servicos.sort((a, b) => b.nome.localeCompare(a.nome));
+            return servicos.sort((a, b) => b.titulo.localeCompare(a.titulo));
         }
         if (filtroSelecionado === 'recentes') {
-            return servicos.sort((a, b) => new Date(b.insercao) - new Date(a.insercao));
+            return servicos.sort((a, b) => new Date(b.realizacao) - new Date(a.realizacao));
         }
         if (filtroSelecionado === 'antigos') {
-            return servicos.sort((a, b) => new Date(a.insercao) - new Date(b.insercao));
+            return servicos.sort((a, b) => new Date(a.realizacao) - new Date(b.realizacao));
         }
         return servicos;
     }
@@ -59,7 +60,7 @@ export default function ServicosConsultar() {
     async function excluir(id) {
         const confirmacao = window.confirm("Você realmente deseja excluir este cliente?");
         if (confirmacao) {
-            const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
+            const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`;
             await axios.delete(url);
             buscar();
         }
@@ -71,6 +72,8 @@ export default function ServicosConsultar() {
 
     function ocultarFiltro() {
         setMostrarFiltro(false);
+        console.log(filtroSelecionado)
+        console.log(filtro)
         buscar()
     }
 
@@ -140,14 +143,14 @@ export default function ServicosConsultar() {
                     <tbody>
                         {servicos.map(item => (
                             <tr className='itemServico' >
-                                <td>{item.servico}</td>
+                                <td>{item.titulo}</td>
                                 <td>{item.cliente}</td>
-                                <td>{item.realizacao}</td>
+                                <td>{new Date(item.realizacao).toLocaleDateString('pt-BR')}</td>
                                 <td>{item.valor}</td>
-                                <td>{item.finalizado}</td>
+                                <td>{item.finalizado ? "Sim" : "Não"}</td>
                                 <td>
-                                    <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.id)} />
-                                    <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.id)} />
+                                    <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.idOrcamento)} />
+                                    <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.idOrcamento)} />
                                 </td>
                             </tr>
                         ))}
