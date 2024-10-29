@@ -7,10 +7,11 @@ import axios from 'axios';
 export default function ServicosCadastrar() {
     const [token, setToken] = useState(null);
     const {id} = useParams();
-    const [cliente, setCliente] = useState('');
+    const [cliente, setCliente] = useState();
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [realizacao, setRealizacao] = useState('');
+    const [finalizado, setFinalizado] = useState(false)
     const [valor, setValor] = useState('');
 
     const navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function ServicosCadastrar() {
             "titulo": titulo,
             "descricao": descricao,
             "realizacao": realizacao,
+            "finalizado": finalizado,
             "valor": valor
         };
 
@@ -30,10 +32,10 @@ export default function ServicosCadastrar() {
         if(cliente && titulo && descricao && realizacao && valor) {
             try {
                 if (id){
-                    const url = `http://localhost:5100/servico/${id}?x-access-token=${token}`
+                    const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`
                     await axios.put(url,servico)
                 }else{
-                    const url = `http://localhost:5100/servico?x-access-token=${token}`
+                    const url = `http://localhost:5100/orcamento?x-access-token=${token}`
                     await axios.post(url,servico);
                 }
                 navigate('/adm/servicos')
@@ -61,17 +63,24 @@ export default function ServicosCadastrar() {
         
 
         async function carregarDadosServicos(id, token){
-            const url = `http://localhost:5100/servicos/${id}?x-access-token=${token}`;
+            const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`;
             try {
                 const resposta = await axios.get(url);
                 const servico = resposta.data;
-                setCliente(servico.cliente);
+                
+                if (servico.cliente) {
+                    setCliente(servico.cliente);
+                } else {
+                    alert('Cliente não encontrado. Verifique o ID.');
+                }
+                
                 setTitulo(servico.titulo);
                 setDescricao(servico.descricao);
                 setRealizacao(formatarDataParaInput(servico.realizacao));
+                setFinalizado(servico.finalizado);
                 setValor(servico.valor);
             } catch (error) {
-                console.error('Erro ao carregar dados do serviço', error)
+                console.error('Erro ao carregar dados do serviço', error);
             }
         }
 
@@ -105,24 +114,28 @@ export default function ServicosCadastrar() {
                 </div>
                 <div className='inputs'>
                     <div className='input'>
-                        <label htmlFor="nome">Titulo:</label>
+                        <label htmlFor="titulo">Titulo:</label>
                         <input type="text" placeholder='Digite aqui...' onKeyUp={enter} value={titulo} onChange={e => setTitulo(e.target.value)} />
                     </div>
                     <div className='input'>
-                        <label htmlFor="email">Descrição:</label>
-                        <input type="email" placeholder='Digite aqui...' onKeyUp={enter} value={descricao} onChange={e => setDescricao(e.target.value)} />
+                        <label htmlFor="descricao">Descrição:</label>
+                        <input type="text" placeholder='Digite aqui...' onKeyUp={enter} value={descricao} onChange={e => setDescricao(e.target.value)} />
                     </div>
                     <div className='input'>
-                        <label htmlFor="telefone">Cliente:</label>
-                        <input type="tel" placeholder='(00) 00000-0000' onKeyUp={enter} value={cliente} onChange={e => setCliente(e.target.value)} /> 
+                        <label htmlFor="cliente">Cliente:</label>
+                        <input type="number" placeholder='Digite aqui...' onKeyUp={enter} value={cliente} onChange={e => setCliente(e.target.value)} /> 
                     </div>
                     <div className='input'>
-                        <label htmlFor="endereco">Data Realização:</label>
-                        <input type="text" placeholder='Digite aqui...' value={realizacao} onKeyUp={enter} onChange={e => setRealizacao(e.target.value)} />
+                        <label htmlFor="realizacao">Data Realização:</label>
+                        <input type="date" placeholder='Digite aqui...' value={realizacao} onKeyUp={enter} onChange={e => setRealizacao(e.target.value)} />
                     </div>
                     <div className='input'>
-                        <label htmlFor="insercao">Valor:</label>
-                        <input type="date" value={valor} onKeyUp={enter} onChange={e => setValor(e.target.value)} />
+                        <label>Finalizado ?</label>
+                        <input type="checkbox" checked={finalizado} onChange={e => setFinalizado(e.target.checked)} />
+                    </div>
+                    <div className='input'>
+                        <label htmlFor="valor">Valor:</label>
+                        <input type="number" placeholder='Digite aqui...' value={valor} onKeyUp={enter} onChange={e => setValor(e.target.value)} />
                     </div>
                 </div>
                 <div className='botao'>
