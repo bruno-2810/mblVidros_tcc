@@ -19,7 +19,7 @@ export default function Navegacao() {
             <Route path="/adm/servicos" element={<ServicosConsultar />} />
             <Route path="/adm/servicos/cadastrar" element={<ServicosCadastrar />} />
             <Route path="/adm/clientes/cadastrar/:id" element={<ClientesCadastrar />} />
-            <Route path="/adm/servicos/cadastrar/:id" element={<ServicosCadastrar />} />
+            <Route path="/adm/servicos/cadastrar/:id/:idcliente" element={<ServicosCadastrar />} />
             <Route path="/adm/clientes/cadastrar" element={<ClientesCadastrar />} />
             <Route path="/adm/cliente/ficha/:id" element={<FichaCliente />} />
         </Routes>

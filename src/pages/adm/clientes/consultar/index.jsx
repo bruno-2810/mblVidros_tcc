@@ -48,7 +48,7 @@ export default function ClientesConsultar() {
     }
 
     function levaraoalterar(id) {
-        navigate(`/adm/servicos/cadastrar/${id}`);
+        navigate(`/adm/clientes/cadastrar/${id}`);
     }
 
     async function excluir(id) {

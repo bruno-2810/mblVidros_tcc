@@ -53,8 +53,8 @@ export default function ServicosConsultar() {
         navigate('/adm/clientes');
     }
 
-    function levaraoalterar(id) {
-        navigate(`/adm/servicos/cadastrar/${id}`);
+    function levaraoalterar(id, idcliente) {
+        navigate(`/adm/servicos/cadastrar/${id}/${idcliente}`);
     }
 
     async function excluir(id) {
@@ -149,7 +149,7 @@ export default function ServicosConsultar() {
                                 <td>{item.valor}</td>
                                 <td>{item.finalizado ? "Sim" : "Não"}</td>
                                 <td>
-                                    <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.idOrcamento)} />
+                                    <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.idOrcamento, item.idCliente)} />
                                     <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.idOrcamento)} />
                                 </td>
                             </tr>

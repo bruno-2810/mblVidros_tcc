@@ -69,13 +69,12 @@ export default function ServicosCadastrar() {
                 const servico = resposta.data;
                 
                 if (servico.cliente) {
-                    setCliente(servico.cliente);
-                } else {
-                    alert('Cliente não encontrado. Verifique o ID.');
+                    setCliente(servico.idCliente);
                 }
                 
                 setTitulo(servico.titulo);
                 setDescricao(servico.descricao);
+                setCliente(servico.idCliente)
                 setRealizacao(formatarDataParaInput(servico.realizacao));
                 setFinalizado(servico.finalizado);
                 setValor(servico.valor);
