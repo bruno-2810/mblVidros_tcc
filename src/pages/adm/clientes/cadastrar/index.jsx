@@ -130,7 +130,7 @@ export default function ClientesCadastrar() {
                     </div>
                     <div className='input'>
                         <label htmlFor="telefone">Telefone:</label>
-                        <input type="tel" ref={withMask("(99) 99999-9999")} placeholder='(00) 00000-0000' onKeyUp={enter} value={telefone} onChange={e => setTelefone(e.target.value)} /> 
+                        <input type="tel" placeholder='(00) 00000-0000' onKeyUp={enter} value={telefone} onChange={e => setTelefone(e.target.value)} /> 
                         
                     </div>
                     <div className='input'>
@@ -139,7 +139,7 @@ export default function ClientesCadastrar() {
                     </div>
                     <div className='input'>
                         <label htmlFor="insercao">Data Inserção:</label>
-                        <input type="date" ref={withMask("99/99/9999")} value={insercao} onKeyUp={enter} onChange={e => setInsercao(e.target.value)} />
+                        <input type="date" value={insercao} onKeyUp={enter} onChange={e => setInsercao(e.target.value)} />
                     </div>
                     <div className='input'>
                         <label htmlFor="foto">Foto:</label>

@@ -71,3 +71,26 @@
             height: 30px;
         }
     }
+
+    @media (max-width: 720px) {
+        .cabecalho {
+            flex-direction: column;
+            padding: 10px 20px; // Reduza o padding em dispositivos móveis
+    
+            .logo {
+                justify-content: center;
+                margin-bottom: 10px; // Espaçamento entre logo e links
+            }
+    
+            .links {
+                flex-direction: row; // Altera para coluna em mobile
+                gap: 10px; // Ajuste o espaço entre links
+                align-items: center; // Centraliza os links
+            }
+    
+            .area {
+                justify-content: center; // Centraliza o botão ADM
+                margin-top: 10px; // Espaçamento entre links e botão
+            }
+        }
+    }

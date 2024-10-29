@@ -5,6 +5,8 @@
     justify-content: center;
 
 
+
+
     .incio {
         position: relative;
         background: url('../../../public/images/banhe.webp') no-repeat center center/cover;
@@ -14,6 +16,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
     .overlay {
@@ -32,6 +35,27 @@
         align-items: center;
         flex-direction: column;
         gap: 40px;
+
+        animation: txt 1.0s ease-out;
+
+        @keyframes txt {
+            0%{
+                opacity: -100%;
+                transform: translateX(-1500px);
+            }
+            25%{
+                opacity: 0%;
+            }
+            50%{
+                opacity: 50%;
+            }
+            75%{
+                opacity: 75%;
+            }
+            100%{
+                opacity: 100%;
+        }
+    }
 
         h1,
         h2 {
@@ -64,21 +88,56 @@
     .botao {
         padding: 10px 25px;
         background-color: transparent;
-        border: 2px solid white;
+        
         color: white;
         text-decoration: none;
         font-weight: bold;
         transition: background-color 0.3s, color 0.3s;
     }
-
     .botao:hover {
+        scale: 110%;
+        transition: 0.7s;
+        border-radius: 10px;
         background-color: white;
         color: black;
+    
     }
+}
 
+@media (max-width: 720px) {
+    .secao1 {
+        
+        .incio {
+            height: 500px; 
+            margin-top: 190px;
+        }
 
+        .content {
+            gap: 20px; 
+            padding: 0 15px; 
 
+            h1 {
+                font-size: 28px; 
+            }
 
+            h2 {
+                font-size: 20px; 
+            }
 
+            p {
+                font-size: 16px; 
+                line-height: 22px;
+            }
 
+            .logo {
+                h1 {
+                    font-size: 30px; 
+                }
+            }
+        }
+
+        .botao {
+            padding: 8px 20px; 
+        }
+    }
 }
