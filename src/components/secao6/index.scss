@@ -37,6 +37,10 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
             gap: 30px;
             color: #c0c0c0;
 
+            h1 {
+                font: 400 40px "champagne2";;
+            }
+
             .whats {
                 background-image: $kkzy-color;
                 width: 200px;
@@ -52,8 +56,10 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
                 gap: 10px;
                 padding: 20px;
                 font-size: 14px;
+                text-decoration: none;
+                color: #000000;
 
-
+                
 
                 &:hover {
                     color: #000000;
@@ -93,4 +99,6 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
         margin-top: 50px;
         color: #fff;
     }
+
+    
 }

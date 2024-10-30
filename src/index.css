@@ -50,3 +50,8 @@ html {
   font-family: "champagne3";
   src: url("../public/assets/fonts/Champagne\ &\ Limousines\ Bold\ Italic.ttf");
 }
+
+@font-face {
+  font-family: "cinzel";
+  src: url("../public/assets/fonts/CinzelDecorative-Regular.ttf");
+}

@@ -3,6 +3,7 @@
     flex-direction: column;
     background-color: #0e1836;
     color: #f0f0f0;
+    padding: 20px;
 
 
     .titulostyle {
@@ -10,16 +11,61 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        margin-top: 30px;
 
         h1 {
+            font-size: 50px;
+            font-family: "champagne2";
+            letter-spacing: 3px;
             margin: 0px 50px;
         }
+
         .dourado {
             height: 2px;
             background-color: #9b8562;
             flex-grow: 1;
         }
     }
+
+    .conteudo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 400px;
+        margin: 40px 0px;
+
+        .informacoes {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            h3 {
+                font: 400 30px "cinzel";
+                margin-bottom: 20px;
+            }
+
+            li {
+                font: 500 25px "champagne";
+                line-height: 30px;
+            }
+            
+        }
+
+        .slide {
+            border: 1px solid #fff;
+            width: 250px;
+            height: 250px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            min-width: 150px; 
+            min-height: 150px; 
+            border-radius: 5px;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
 }
 
 

@@ -2,18 +2,33 @@
     background-color: #0e1836;
     padding: 20px;
 
-    h2 {
-        text-align: center;
-        font-size: 30px;
+    .titulostyle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         color: #fff;
-       
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-family: "champagne2";
+            letter-spacing: 2px;
+            margin: 0px 50px;
+        }
+
+        .dourado {
+            height: 2px;
+            background-color: #9b8562;
+            flex-grow: 1;
+        }
     }
 
     .txt {
         color: rgb(255, 255, 255);
         text-align: center;
-        font-size: 25px;
         margin-top: 70px;
         margin-bottom: 50px;
+        font: 400 25px "champagne2";
     }
 }
