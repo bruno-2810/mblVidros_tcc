@@ -125,6 +125,7 @@ export default function ClientesConsultar() {
                 <table>
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Nome</th>
                             <th>Telefone</th>
                             <th>Data Inserção</th>
@@ -134,6 +135,7 @@ export default function ClientesConsultar() {
                     <tbody>
                         {clientes.map(item => (
                             <tr className='itemCliente' >
+                                <td onClick={() => levaraFichaCliente(item.id)}>{item.id}</td>
                                 <td onClick={() => levaraFichaCliente(item.id)}>{item.nome}</td>
                                 <td onClick={() => levaraFichaCliente(item.id)}>{item.telefone}</td>
                                 <td onClick={() => levaraFichaCliente(item.id)}>{new Date(item.insercao).toLocaleDateString('pt-BR')}</td>

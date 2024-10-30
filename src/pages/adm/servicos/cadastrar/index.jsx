@@ -20,6 +20,7 @@ export default function ServicosCadastrar() {
     async function salvar() {
         const servico = {
             "cliente": cliente,
+            "idUsuario": token ? JSON.parse(atob(token.split('.')[1])).id : null,
             "titulo": titulo,
             "descricao": descricao,
             "realizacao": realizacao,
@@ -33,6 +34,7 @@ export default function ServicosCadastrar() {
             try {
                 if (id){
                     const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`
+                    console.log(token)
                     await axios.put(url,servico)
                 }else{
                     const url = `http://localhost:5100/orcamento?x-access-token=${token}`
@@ -88,7 +90,7 @@ export default function ServicosCadastrar() {
             const usu = localStorage.getItem('USUARIO');
             setToken(usu);
     
-            if (!usu) {
+            if (!token) {
                 navigate('/entrar');
             }
     
@@ -121,7 +123,7 @@ export default function ServicosCadastrar() {
                         <input type="text" placeholder='Digite aqui...' onKeyUp={enter} value={descricao} onChange={e => setDescricao(e.target.value)} />
                     </div>
                     <div className='input'>
-                        <label htmlFor="cliente">Cliente:</label>
+                        <label htmlFor="cliente">Id do Cliente:</label>
                         <input type="number" placeholder='Digite aqui...' onKeyUp={enter} value={cliente} onChange={e => setCliente(e.target.value)} /> 
                     </div>
                     <div className='input'>

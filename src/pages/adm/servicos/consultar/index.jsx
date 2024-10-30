@@ -105,7 +105,9 @@ export default function ServicosConsultar() {
         return null;
     }
 
-
+    function levarFichaServico(id){
+        navigate(`/adm/servico/ficha/${id}`)
+    }
 
     useEffect(() => {
         let usu = localStorage.getItem('USUARIO');
@@ -143,11 +145,11 @@ export default function ServicosConsultar() {
                     <tbody>
                         {servicos.map(item => (
                             <tr className='itemServico' >
-                                <td>{item.titulo}</td>
-                                <td>{item.cliente}</td>
-                                <td>{new Date(item.realizacao).toLocaleDateString('pt-BR')}</td>
-                                <td>{item.valor}</td>
-                                <td>{item.finalizado ? "Sim" : "Não"}</td>
+                                <td onClick={() => levarFichaServico(item.idOrcamento)}>{item.titulo}</td>
+                                <td onClick={() => levarFichaServico(item.idOrcamento)}>{item.cliente}</td>
+                                <td onClick={() => levarFichaServico(item.idOrcamento)}>{new Date(item.realizacao).toLocaleDateString('pt-BR')}</td>
+                                <td onClick={() => levarFichaServico(item.idOrcamento)}>R$ {item.valor}</td>
+                                <td onClick={() => levarFichaServico(item.idOrcamento)}>{item.finalizado ? "Sim" : "Não"}</td>
                                 <td>
                                     <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.idOrcamento, item.idCliente)} />
                                     <img src="/images/remove.png" alt="" className='img' onClick={() => excluir(item.idOrcamento)} />

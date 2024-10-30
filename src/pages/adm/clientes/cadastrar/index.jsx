@@ -97,7 +97,7 @@ export default function ClientesCadastrar() {
         const usu = localStorage.getItem('USUARIO');
         setToken(usu);
 
-        if (!usu) {
+        if (!token) {
             navigate('/entrar');
         }
 
