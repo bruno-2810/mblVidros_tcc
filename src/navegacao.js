@@ -6,6 +6,7 @@ import ClientesCadastrar from "./pages/adm/clientes/cadastrar";
 import ServicosConsultar from "./pages/adm/servicos/consultar";
 import ServicosCadastrar from "./pages/adm/servicos/cadastrar";
 import FichaCliente from "./pages/adm/clientes/fichaCliente";
+import FichaServico from "./pages/adm/servicos/fichaServico";
 
 
 export default function Navegacao() {
@@ -22,6 +23,7 @@ export default function Navegacao() {
             <Route path="/adm/servicos/cadastrar/:id/:idcliente" element={<ServicosCadastrar />} />
             <Route path="/adm/clientes/cadastrar" element={<ClientesCadastrar />} />
             <Route path="/adm/cliente/ficha/:id" element={<FichaCliente />} />
+            <Route path="/adm/servico/ficha/:id" element={<FichaServico />} />
         </Routes>
     </BrowserRouter>
     )
