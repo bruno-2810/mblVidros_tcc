@@ -1,10 +1,46 @@
 import './index.scss'
+import { useState, useEffect } from 'react';
 
 export default function Secao1() {
 
+
+    const imagens = [
+        '/images/banhe.webp',
+        '/images/porta.png',
+        '/images/janela.png',
+        '/images/box..png'
+    ];
+
+    const [imagemAtual, setImagemAtual] = useState(0);
+    const [nextImage, setNextImage] = useState(1);
+
+
+    useEffect(() => {
+        
+        imagens.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        const intervalo = setInterval(() => {
+            setTimeout(() => {
+                
+                setImagemAtual(nextImage);
+                setNextImage((nextImage + 1) % imagens.length);
+            }, 1000); 
+        }, 2000);
+
+        return () => clearInterval(intervalo);
+    }, [nextImage, imagens]);
+
     return (
         <div className='secao1' id='inicio'>
-            <div className='incio'>
+            <div className='incio'
+            
+            style={{
+                backgroundImage: `url(${imagens[imagemAtual]})`
+            }}>
+
                 <div class="overlay"></div>
                 <div className='content'>
                     <h1>Bem-vindo à Vidraçaria</h1>
