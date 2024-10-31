@@ -6,7 +6,7 @@ export default function Secao3(){
         <div className="secao3">
 
             <div className='porque'>
-                <h1>Por que Escolher a Vidraçaria MBL vidros? </h1>
+                <h1>Por que Escolher a Vidraçaria <span>MBL vidros?</span> </h1>
             </div>
         
             <div className='tudao'>

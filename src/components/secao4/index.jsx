@@ -29,8 +29,8 @@ export default function Secao4() {
                     slidesPerView={1}
                     loop={true}
                     autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
+                        delay: 2000,
+                        disableOnInteraction: true,
                     }}
                 className='swiper'>
                     <div className='teste'>

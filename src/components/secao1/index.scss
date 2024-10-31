@@ -36,25 +36,6 @@
         flex-direction: column;
         gap: 40px;
 
-        animation: txt 1.0s ease-out;
-
-        @keyframes txt {
-            0%{
-                opacity: -100%;
-                transform: translateX(-1500px);
-            }
-            25%{
-                opacity: 0%;
-            }
-            50%{
-                opacity: 50%;
-            }
-            75%{
-                opacity: 75%;
-            }
-            100%{
-                opacity: 100%;
-        }
     }
 
         h1,
@@ -101,7 +82,7 @@
         color: black;
     
     }
-}
+
 
 @media (max-width: 720px) {
     .secao1 {

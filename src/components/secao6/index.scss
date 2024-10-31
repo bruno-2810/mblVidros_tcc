@@ -21,7 +21,13 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
             justify-content: center;
             align-items: center;
             color: #bdbdbd;
+
             
+                &:hover {
+                    scale: 110%;
+                    transition: 0.7s;
+                    }
+                    
 
             h1 {
                 font-family: "dolce";
