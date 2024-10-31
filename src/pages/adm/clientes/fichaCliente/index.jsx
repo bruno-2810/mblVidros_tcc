@@ -26,7 +26,7 @@ export default function FichaCliente() {
 
         let usu = localStorage.getItem('USUARIO');
         
-        if (!token) {
+        if (!usu) {
             navigate('/entrar');
         }
         else {

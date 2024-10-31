@@ -28,8 +28,6 @@ export default function ServicosCadastrar() {
             "valor": valor
         };
 
-        console.log("Dados do Serviço: ", servico);
-
         if(cliente && titulo && descricao && realizacao && valor) {
             try {
                 if (id){
@@ -42,7 +40,6 @@ export default function ServicosCadastrar() {
                 }
                 navigate('/adm/servicos')
             } catch (error) {
-                console.error('Erro ao salvar Serviço: ', error.response ? error.response.data : error.message);
                 alert('Houve um erro ao salvar o Serviço. Tente novamente. ');
             }
         } else {
@@ -90,7 +87,7 @@ export default function ServicosCadastrar() {
             const usu = localStorage.getItem('USUARIO');
             setToken(usu);
     
-            if (!token) {
+            if (!usu) {
                 navigate('/entrar');
             }
     

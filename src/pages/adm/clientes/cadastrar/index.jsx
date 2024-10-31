@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Cabecalhoadm from '../../components/cabecalhoAdm';
 import './index.scss';
 import axios from 'axios';
-import { withMask } from "use-mask-input"
 
 export default function ClientesCadastrar() {
     const [token, setToken] = useState(null);
@@ -26,9 +25,6 @@ export default function ClientesCadastrar() {
             "insercao": insercao,
             "foto": foto
         };
-    
-        console.log("Dados do Cliente:", cliente); 
-        console.log(cliente.foto)
 
         if (nome && email && telefone && endereco && insercao) {
             try {
@@ -41,7 +37,6 @@ export default function ClientesCadastrar() {
                 }
                 navigate('/adm/clientes');
             } catch (error) {
-                console.error('Erro ao salvar cliente:', error.response ? error.response.data : error.message);
                 alert('Houve um erro ao salvar o cliente. Tente novamente.');
                 console.log(cliente)
             }
@@ -97,7 +92,7 @@ export default function ClientesCadastrar() {
         const usu = localStorage.getItem('USUARIO');
         setToken(usu);
 
-        if (!token) {
+        if (!usu) {
             navigate('/entrar');
         }
 

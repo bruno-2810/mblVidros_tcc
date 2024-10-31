@@ -19,7 +19,6 @@ export default function ServicosConsultar() {
     const navigate = useNavigate();
 
     async function buscar() {
-        console.log(servicos)
         const url = `http://localhost:5100/orcamentos?filtro=${filtro}&x-access-token=${token}`;
         let resp = await axios.get(url);
         const listaServicos = resp.data;
@@ -72,8 +71,6 @@ export default function ServicosConsultar() {
 
     function ocultarFiltro() {
         setMostrarFiltro(false);
-        console.log(filtroSelecionado)
-        console.log(filtro)
         buscar()
     }
 
@@ -105,7 +102,7 @@ export default function ServicosConsultar() {
         return null;
     }
 
-    function levarFichaServico(id){
+    function levarFichaServico(id) {
         navigate(`/adm/servico/ficha/${id}`)
     }
 
@@ -148,7 +145,10 @@ export default function ServicosConsultar() {
                                 <td onClick={() => levarFichaServico(item.idOrcamento)}>{item.titulo}</td>
                                 <td onClick={() => levarFichaServico(item.idOrcamento)}>{item.cliente}</td>
                                 <td onClick={() => levarFichaServico(item.idOrcamento)}>{new Date(item.realizacao).toLocaleDateString('pt-BR')}</td>
-                                <td onClick={() => levarFichaServico(item.idOrcamento)}>R$ {item.valor}</td>
+                                <td onClick={() => levarFichaServico(item.idOrcamento)}>
+                                    R$ {item.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                </td>
+
                                 <td onClick={() => levarFichaServico(item.idOrcamento)}>{item.finalizado ? "Sim" : "Não"}</td>
                                 <td>
                                     <img src="/images/edit.png" alt="" className='img' onClick={() => levaraoalterar(item.idOrcamento, item.idCliente)} />

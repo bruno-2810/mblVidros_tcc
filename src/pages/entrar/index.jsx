@@ -41,11 +41,15 @@ export default function Entrar () {
     return(
         <div className='pagina-entrar'>
             <div className='container'>
-                <h1>Administrador</h1>
+                <div className='titulo'><h1>Administrador</h1></div>
+                <div className='inputs'>
                 <input id="placeholder-text" onKeyUp={enter} type="text" placeholder='Usuário' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 <input id="placeholder-text" onKeyUp={enter} type="password" placeholder='Senha' value={senha} onChange={(e) => setSenha(e.target.value)}/>
+                </div>
+                <div className='botoes'>
                 <button className='entrar' onClick={entrar}>Entrar</button>
                 <button className='voltar' onClick={voltar}>Voltar</button>
+                </div>
             </div>
         </div>
     )

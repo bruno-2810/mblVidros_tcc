@@ -1,58 +1,114 @@
-.pagina-entrar{
+.pagina-entrar {
     background-color: #DCE3ED;
     display: flex;
     justify-content: center;
-    
 
-    .container{
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 300px;
         height: 400px;
         background-color: #404F63;
         display: flex;
         flex-direction: column;
         margin: 0;
-        padding: 30px 0px;
+        padding: 40px 0px;
         border-radius: 12px;
         align-self: center;
         margin-top: 60px;
-        
 
-        h1{
-            font-size: 26px;
+        .titulo {
             align-self: center;
+            margin: 0;
+            padding: 0;
             color: white;
         }
 
-        input{
-            background-color: #404F63;
-            border: none;
-            outline: none;
-            border-bottom: 1px solid black;
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+
             width: 80%;
             align-self: center;
-            color: white;
-            margin-bottom: -20px ;
-        }
-        #placeholder-text::placeholder {
-            color: white;
-            font-weight: 100;
-            opacity: 0.5;
-            font-size: 16px;
+
+            input {
+                background-color: #404F63;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid black;
+                color: white;
+                font-size: 16px;
+                margin-top: 20px;
+            }
         }
 
-        button{
-            width: 40%;
+        .botoes {
+            display: flex;
+            flex-direction: column;
             align-self: center;
-            border-radius: 16px;
-            border: 0px solid black;
-            box-shadow: 0 0 5px black;
-            height: 7%;
-            font-weight: 700;
-        }
+            width: 40%;
+            gap: 20px;
 
-        .voltar{
-            margin-top: -70px;
-        }
+            button {
+                border-radius: 16px;
+                border: 0px solid black;
+                box-shadow: 0 0 5px black;
+                height: 25px;
+                font-weight: 700;
+            }
 
+            button:hover{
+                background-color: #404F63;
+                color: #DCE3ED;
+                transition: 0.2s;
+                scale: 110%;
+            }
+        }
     }
 }
+
+
+
+// h1{
+//     font-size: px;
+//     align-self: center;
+//     color: white;
+// }
+
+// input{
+//     background-color: #404F63;
+//     border: none;
+//     outline: none;
+//     border-bottom: 1px solid black;
+//     width: 80%;
+//     align-self: center;
+//     color: white;
+// }
+
+// button{
+//     width: 40%;
+//     align-self: center;
+//     border-radius: 16px;
+//     border: 0px solid black;
+//     box-shadow: 0 0 5px black;
+//     height: 7%;
+//     font-weight: 700;
+// }
+
+// .voltar{
+//     margin-top: -70px;
+// }
+
+
+
+
+// #placeholder-text::placeholder {
+//     color: white;
+//     font-weight: 100;
+//     opacity: 0.5;
+//     font-size: 16px;
+// }

@@ -1,37 +1,103 @@
-.pagina-fichacliente{
-    text-align: center;
+.pagina-fichacliente {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         background-color: white;
-        border-radius: 12px;
         margin-top: 30px;
-        height: 350px;
         align-self: center;
         padding: 0;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         line-height: 1.5;
+        justify-content: space-between;
+        border-radius: 6px;
 
-        p{
-            font-size: 20px;
-            font-weight: 600;
-        }
-        .textos{
-            padding: 5px 50px;
-            max-width: 500px;
-        }
-    }
+        .botao{
+            margin-bottom: 30px;
 
-    .img{
-        width: 150px;
-        height: auto;
-        align-self: center;
-        margin-bottom: 15px;
-        border-radius: 20000000px;
+            .btn-voltar {
+                align-self: center;
+                background-color: white;
+                color: #001C53;
+                border: 3px solid #404F63;
+                font-size: 12px;
+                width: 80px;
+                padding: 3px 5px;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+    
+            .btn-voltar:hover {
+                background-color: #404F63;
+                color: white;
+            }
+        }
+
+        .titulo {
+            background-color: #B0C6E5;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-radius: 6px 6px 0px 0px;
+            padding: 8px 0px;
+
+            p {
+                max-width: 250px;
+                align-self: center;
+                font-weight: 450;
+                font-size: 22px;
+            }
+        }
+
+        .conteudo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 20px 30px;
+            margin-top: -50px;
+
+            p {
+                font-weight: 400;
+                font-size: 18px;
+            }
+
+            span {
+                background-color: #BDC4CE;
+                border-radius: 4px;
+                padding: 2px 5px;
+                white-space: wrap;
+                display: inline-block;
+
+            }
+
+            .coluna1 {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-align: left;
+
+                .descricao {
+                    max-width: 450px;
+                }
+
+                .spandesc {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+            }
+
+            .coluna2 {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-align: left;
+            }
+        }
     }
 }

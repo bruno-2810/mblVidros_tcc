@@ -18,16 +18,19 @@ export default function FichaServico() {
             const response = await axios.get(url);
             setServico(response.data);
         } catch (error) {
-            console.log(token)
             console.error("Erro ao buscar serviço:", error);
         }
+    }
+
+    function levaraconulta() {
+        navigate('/adm/servicos')
     }
 
     useEffect(() => {
 
         let usu = localStorage.getItem('USUARIO');
-        
-        if (!token) {
+
+        if (!usu) {
             navigate('/entrar');
         }
         else {
@@ -40,13 +43,31 @@ export default function FichaServico() {
         <div className='pagina-fichacliente'>
             <Cabecalhoadm />
             <div className='container'>
-            <div className='textos'>
-            {servico ? <p>{servico.titulo}</p> : <p>Carregando...</p> }
-            {servico ? <p>{servico.cliente}</p> : <p>Carregando...</p>}
-            {servico ? <p>{servico.descricao}</p> : <p>Carregando...</p>}
-            {servico ? <p>{new Date(servico.realizacao).toLocaleDateString('pt-BR')}</p> : <p>Carregando...</p>}
-            {servico ? <p>{servico.finalizado ? 'Serviço Entregue' : 'Pendente'}</p> : <p>Carregando...</p>}
-            </div>
+                <div className='titulo'>
+                    {servico ? <p>{servico.titulo}</p> : <p>Carregando...</p>}
+                </div>
+                <div className='conteudo'>
+                    <div className='coluna1'>
+                        {servico ? <p>nome do cliente: <span>{servico.cliente}</span></p> : <p>Carregando...</p>}
+                        <div className='spandesc'>
+                            <p>descrição:&nbsp;</p>
+                            {servico ? <p className='descricao'><span>{servico.descricao}</span></p> : <p className='descricao'>Carregando...</p>}
+                        </div>
+                        {servico ? (
+                            <p>valor: <span>R$ {servico.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></p>
+                        ) : (
+                            <p>Carregando...</p>
+                        )}
+
+                    </div>
+                    <div className='coluna2'>
+                        {servico ? <p>data de realização: <span>{new Date(servico.realizacao).toLocaleDateString('pt-BR')}</span></p> : <p>Carregando...</p>}
+                        {servico ? <p>situação: <span>{servico.finalizado ? 'Finalizado' : 'Pendente'}</span></p> : <p>Carregando...</p>}
+                    </div>
+                </div>
+                <div className='botao'>
+                    <button onClick={levaraconulta} className='btn-voltar'>Voltar</button>
+                </div>
             </div>
         </div>
     );
