@@ -13,6 +13,7 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        padding: 0px 80px;
 
         .logo {
             display: flex;
@@ -20,7 +21,6 @@ $kkzy-color: linear-gradient(115deg, #009400, #00be00, #005e00);
             justify-content: center;
             align-items: center;
             color: #bdbdbd;
-            margin-left: 100px;
             
 
             h1 {
