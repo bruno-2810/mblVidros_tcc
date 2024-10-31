@@ -22,6 +22,10 @@ export default function FichaCliente() {
         }
     }
 
+    function levaraconulta() {
+        navigate('/adm/clientes')
+    }
+
     useEffect(() => {
 
         let usu = localStorage.getItem('USUARIO');
@@ -46,6 +50,9 @@ export default function FichaCliente() {
             {cliente ? <p>{cliente.telefone}</p> : <p>Carregando...</p>}
             {cliente ? <p>{cliente.endereco}</p> : <p>Carregando...</p>}
             </div>
+            <div className='botao'>
+                    <button onClick={levaraconulta} className='btn-voltar'>Voltar</button>
+                </div>
             </div>
         </div>
     );

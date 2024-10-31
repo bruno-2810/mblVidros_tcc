@@ -59,6 +59,7 @@
         &:hover {
             scale: 110%;
             transition: 0.7s;
+
         }
 
         button {
@@ -69,6 +70,7 @@
             font-size: 17px;
             width: 70px;
             height: 30px;
+            cursor: pointer;
         }
     }
 

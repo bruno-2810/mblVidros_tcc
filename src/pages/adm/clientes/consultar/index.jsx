@@ -53,10 +53,15 @@ export default function ClientesConsultar() {
 
     async function excluir(id) {
         const confirmacao = window.confirm("Você realmente deseja excluir este cliente?");
-        if (confirmacao) {
-            const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
-            await axios.delete(url);
-            buscar();
+        try {
+            if (confirmacao) {
+                const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
+                await axios.delete(url);
+                buscar();
+            }
+            
+        } catch (error) {
+            alert('Por favor, delete primeiro o serviço no qual este cliente está vinculado')
         }
     }
 

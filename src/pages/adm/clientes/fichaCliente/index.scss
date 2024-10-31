@@ -1,36 +1,59 @@
-.pagina-fichacliente{
+.pagina-fichacliente {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         background-color: white;
         border-radius: 12px;
         margin-top: 30px;
-        height: 350px;
         align-self: center;
         padding: 0;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         line-height: 1.5;
 
-        p{
+        p {
             font-size: 20px;
             font-weight: 600;
         }
-        .textos{
-            padding: 5px 50px;
+
+        .textos {
+            padding: 0px 50px;
+            margin-bottom: 20px;
         }
     }
 
-    .img{
+    .botao {
+
+        .btn-voltar {
+            align-self: center;
+            background-color: white;
+            color: #001C53;
+            border: 3px solid #404F63;
+            font-size: 12px;
+            width: 80px;
+            padding: 3px 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+            background-color: #404F63;
+            color: white;
+        }
+    }
+
+    .img {
         width: 150px;
         height: auto;
         align-self: center;
-        margin-bottom: 15px;
+        margin-top: 20px;
+        margin-bottom: 10px;
         border-radius: 20000000px;
     }
 }

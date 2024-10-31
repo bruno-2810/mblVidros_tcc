@@ -57,7 +57,7 @@ export default function ServicosConsultar() {
     }
 
     async function excluir(id) {
-        const confirmacao = window.confirm("Você realmente deseja excluir este cliente?");
+        const confirmacao = window.confirm("Você realmente deseja excluir este serviço?");
         if (confirmacao) {
             const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`;
             await axios.delete(url);
