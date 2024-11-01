@@ -12,19 +12,24 @@
         font-weight: bold;
         transition: background-color 0.3s, color 0.3s;
     }
+
     .botao:hover {
         scale: 110%;
         transition: 0.7s;
         border-radius: 10px;
         background-color: white;
         color: black;
-    
+
     }
 
+    
 
     .incio {
         position: relative;
-        background: no-repeat center center/cover;
+        background-image: url('../../../public/images/banhe.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 700px;
         width: 100%;
         color: white;
@@ -53,71 +58,71 @@
 
     }
 
-        h1,
-        h2 {
-            font-family: "champagne2";
-            letter-spacing: 2px
-        }
-
-        p {
-            font-size: 20px;
-            font-family: "champagne2";
-            text-align: center;
-            line-height: 25px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-    
-            h1 {
-                font-family: 'dolce';
-                letter-spacing: 3px;
-                font-size: 38px;
-            }
-            
-        }
-    
+    h1,
+    h2 {
+        font-family: "champagne2";
+        letter-spacing: 2px
     }
 
+    p {
+        font-size: 20px;
+        font-family: "champagne2";
+        text-align: center;
+        line-height: 25px;
+    }
 
-   
+    .logo {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-family: 'dolce';
+            letter-spacing: 3px;
+            font-size: 38px;
+        }
+
+    }
+
+}
+
+
+
 
 
 @media (max-width: 720px) {
     .secao1 {
-        
+
         .incio {
-            height: 500px; 
+            height: 500px;
             margin-top: 190px;
         }
 
         .content {
-            gap: 20px; 
-            padding: 0 15px; 
+            gap: 20px;
+            padding: 0 15px;
 
             h1 {
-                font-size: 28px; 
+                font-size: 28px;
             }
 
             h2 {
-                font-size: 20px; 
+                font-size: 20px;
             }
 
             p {
-                font-size: 16px; 
+                font-size: 16px;
                 line-height: 22px;
             }
 
             .logo {
                 h1 {
-                    font-size: 30px; 
+                    font-size: 30px;
                 }
             }
         }
 
         .botao {
-            padding: 8px 20px; 
+            padding: 8px 20px;
         }
     }
 }

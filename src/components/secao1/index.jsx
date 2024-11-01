@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function Secao1() {
 
 
-    const imagens = [
+   /* const imagens = [
         '/images/banhe.webp',
         '/images/porta.png',
         '/images/janela.png',
@@ -32,14 +32,13 @@ export default function Secao1() {
 
         return () => clearInterval(intervalo);
     }, [nextImage, imagens]);
+*/
 
     return (
         <div className='secao1' id='inicio'>
             <div className='incio'
             
-            style={{
-                backgroundImage: `url(${imagens[imagemAtual]})`
-            }}>
+            >
 
                 <div class="overlay"></div>
                 <div className='content'>
@@ -50,7 +49,7 @@ export default function Secao1() {
                     </div>
                     <h2>Soluções em Vidro com Qualidade e Segurança</h2>
                     <p>Na Vidraçaria MBL Vidros, oferecemos os melhores serviços de instalação e <br />manutenção de vidros para residências e empresas.</p>
-                    <a href="#" className="botao">Saiba Mais</a>
+                    <a href="#servicos" className="botao">Saiba Mais</a>
                 </div>
             </div>
         </div>
