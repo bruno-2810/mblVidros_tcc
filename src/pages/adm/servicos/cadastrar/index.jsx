@@ -31,11 +31,11 @@ export default function ServicosCadastrar() {
         if(cliente && titulo && descricao && realizacao && valor) {
             try {
                 if (id){
-                    const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`
+                    const url = `http://4.172.207.208:5016/orcamento/${id}?x-access-token=${token}`
                     console.log(token)
                     await axios.put(url,servico)
                 }else{
-                    const url = `http://localhost:5100/orcamento?x-access-token=${token}`
+                    const url = `http://4.172.207.208:5016/orcamento?x-access-token=${token}`
                     await axios.post(url,servico);
                 }
                 navigate('/adm/servicos')
@@ -62,7 +62,7 @@ export default function ServicosCadastrar() {
         
 
         async function carregarDadosServicos(id, token){
-            const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`;
+            const url = `http://4.172.207.208:5016/orcamento/${id}?x-access-token=${token}`;
             try {
                 const resposta = await axios.get(url);
                 const servico = resposta.data;

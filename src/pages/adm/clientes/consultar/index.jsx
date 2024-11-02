@@ -15,7 +15,7 @@ export default function ClientesConsultar() {
     const navigate = useNavigate();
 
     async function buscar() {
-        const url = `http://localhost:5100/clientes?filtro=${filtro}&x-access-token=${token}`;
+        const url = `http://4.172.207.208:5016/clientes?filtro=${filtro}&x-access-token=${token}`;
         let resp = await axios.get(url);
         const listaClientes = resp.data;
 
@@ -55,7 +55,7 @@ export default function ClientesConsultar() {
         const confirmacao = window.confirm("Você realmente deseja excluir este cliente?");
         try {
             if (confirmacao) {
-                const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
+                const url = `http://4.172.207.208:5016/cliente/${id}?x-access-token=${token}`;
                 await axios.delete(url);
                 buscar();
             }
