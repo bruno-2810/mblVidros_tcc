@@ -74,25 +74,3 @@
         }
     }
 
-    @media (max-width: 720px) {
-        .cabecalho {
-            flex-direction: column;
-            padding: 10px 20px; 
-    
-            .logo {
-                justify-content: center;
-                margin-bottom: 10px;
-            }
-    
-            .links {
-                flex-direction: row;
-                gap: 10px; 
-                align-items: center; 
-            }
-    
-            .area {
-                justify-content: center;
-                margin-top: 10px; 
-            }
-        }
-    }

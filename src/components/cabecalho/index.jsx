@@ -1,4 +1,5 @@
     import './index.scss'
+    import './responsividade.scss'
     import { useNavigate } from 'react-router-dom'
 
 
