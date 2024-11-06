@@ -1,0 +1,57 @@
+@media (max-width: 720px) {
+
+
+    .secao3 {
+        display: flex;
+        flex-direction: column;
+
+
+        .porque {
+            margin: 0;
+            padding: 0;
+
+            h1{
+                font-size: 26px;
+                padding: 10px 30px 12px 30px;
+            }
+        }
+
+        .tudao {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: none;
+            padding: 20px 0px 10px 0px;
+
+            .descricoes{
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+            }
+            .descricoespt2{
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+            }
+
+            .resp{
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                padding: 10px 30px;
+                margin-top: -20px;
+
+                h1{
+                    font-size: 22px;
+                    margin-bottom: 5px;
+                }
+                p{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import './index.scss';
+import './responsividade.scss'
 import { useState, useEffect } from 'react';
 
 export default function Secao2() {

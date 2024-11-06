@@ -21,7 +21,11 @@
         background-position: center;
         background-size: 100% 100%;
         background-color: #D8D8D8;
-        gap: 10%;
+        gap: 5%;
+    }
+
+    .resp{
+        padding: 10px 80px;
     }
 
     .porque {
@@ -39,7 +43,7 @@
         display: flex;
         flex-direction: column;
         text-align: left;
-        margin-top: 3px;
+        margin-top: 10px;
 
         .experientes{
             margin-top: 39px;
@@ -61,6 +65,7 @@
         display: flex;
         flex-direction: column;
         text-align: left;
+        margin-top: -10px;
 
         h1 {
             color: #0041C5;

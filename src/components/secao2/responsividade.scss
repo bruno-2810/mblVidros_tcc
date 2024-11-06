@@ -1,0 +1,44 @@
+@media (max-width: 720px) {
+
+    .secao2 {
+
+        .titulostyle {
+
+            h1 {
+                font-size: 34px;
+                text-align: center;
+            }
+
+            .dourado {
+                display: none;
+            }
+        }
+
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+
+            .informacoes {
+
+                h3 {
+                    align-self: center;
+                    text-align: center;
+                }
+
+                margin: 50px 0px 30px 0px;
+                padding: 0px 30px;
+
+            }
+
+            .slide {
+                margin-top: -380px;
+                margin-bottom: 40px;
+                padding: 0;
+
+            }
+        }
+
+    }
+}

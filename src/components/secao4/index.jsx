@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import Card from '../card';
 import './index.scss';
+import './responsividade.scss'
 
 register();
 

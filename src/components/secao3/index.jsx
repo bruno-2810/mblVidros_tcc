@@ -1,4 +1,5 @@
 import './index.scss'
+import './responsividade.scss'
 
 export default function Secao3() {
 
@@ -11,25 +12,29 @@ export default function Secao3() {
 
             <div className='tudao'>
                 <div className='descricoes'>
-                    <h1>Qualidade garantida:</h1>
 
-                    <p>Utilizamos apenas materiais de qualidade para <br /> garantir durabilidade e segurança.</p>
+                    <div className='resp'>
+                        <h1>Qualidade garantida:</h1>
+                        <p>Utilizamos apenas materiais de qualidade para garantir durabilidade e segurança.</p>
+                    </div>
 
-
-                    <h1 className='experientes'>Profissionais Experientes:</h1>
-
-
-                    <p>Nossa Equipe é composta por vidraceiros <br /> qualificados e com vasta Experiencia no mercado.</p>
+                    <div className='resp'>
+                        <h1 className='experientes'>Profissionais Experientes:</h1>
+                        <p>Nossa Equipe é composta por vidraceiros qualificados e com vasta Experiencia no mercado.</p>
+                    </div>
                 </div>
 
                 <div className='descricoespt2'>
-                    <h1>Atendimento Personalizado:</h1>
 
-                    <p>cada projeto é unico, e oferecemos <br /> soluções Sobmedida para atender <br /> suas necessidades. </p>
+                    <div className='resp'>
+                        <h1>Atendimento Personalizado:</h1>
+                        <p>cada projeto é unico, e oferecemos soluções Sobmedida para atender suas necessidades. </p>
+                    </div>
 
-                    <h1 className='competitivos'>Preços Competitivos:</h1>
-
-                    <p>Oferecemos o melhor custo-benefício para <br /> que você tenha serviços de qualidade sem comprometer o orçamento. </p>
+                    <div className='resp'>
+                        <h1 className='competitivos'>Preços Competitivos:</h1>
+                        <p>Oferecemos o melhor custo-benefício para que você tenha serviços de qualidade sem comprometer o orçamento. </p>
+                    </div>
                 </div>
             </div>
 

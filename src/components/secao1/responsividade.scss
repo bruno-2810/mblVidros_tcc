@@ -1,22 +1,32 @@
 @media (max-width: 720px) {
-    .content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 200px 50px;
-        text-align: center;
 
-        h1{
-            
+    .secao1 {
+
+        p{
+            margin-bottom: 10px;
         }
 
-        .logo{
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px 30px;
+            line-height: 1;
+            text-align: center;
 
-        }
+            .titulo {
+                margin-top: 150px;
+            }
 
-        .titulo{
-            margin-top: 300px;
-            align-self: center;
+            .botao {
+                display: none;
+            }
+
+            .logo{
+                h1{
+                    text-align: left;
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 import './index.scss'
+import './responsividade.scss'
 
 
 export default function Card(props) {
