@@ -14,7 +14,7 @@ export default function FichaCliente() {
 
     async function buscarClienteFicha() {
         try {
-            const url = `http://4.172.207.208:5016/cliente/${id}?x-access-token=${token}`;
+            const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
             const response = await axios.get(url);
             setCliente(response.data);
         } catch (error) {

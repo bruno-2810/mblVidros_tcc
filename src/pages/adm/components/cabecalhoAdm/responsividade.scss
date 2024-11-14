@@ -1,0 +1,26 @@
+@media (max-width: 720px) {
+
+    .cabecalhoadm {
+        display: flex;
+        flex-direction: column;
+
+        .logo {
+           align-items: center;
+           justify-content: center;
+           margin-bottom: 10px;
+        }
+
+        .texto {
+
+            h3 {
+                font-size: 18px;
+                margin-left: 50px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .sair {
+            margin-bottom: 10px;
+        }
+    }
+}

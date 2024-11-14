@@ -19,7 +19,7 @@ export default function ServicosConsultar() {
     const navigate = useNavigate();
 
     async function buscar() {
-        const url = `http://4.172.207.208:5016/orcamentos?filtro=${filtro}&x-access-token=${token}`;
+        const url = `http://localhost:5100/orcamentos?filtro=${filtro}&x-access-token=${token}`;
         let resp = await axios.get(url);
         const listaServicos = resp.data;
 
@@ -59,7 +59,7 @@ export default function ServicosConsultar() {
     async function excluir(id) {
         const confirmacao = window.confirm("Você realmente deseja excluir este serviço?");
         if (confirmacao) {
-            const url = `http://4.172.207.208:5016/orcamento/${id}?x-access-token=${token}`;
+            const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`;
             await axios.delete(url);
             buscar();
         }

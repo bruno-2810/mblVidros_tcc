@@ -1,5 +1,5 @@
-import './index.scss'
-
+import './index.scss';
+import './responsividade.scss';
 
 
 export default function Tituloadm (props) {

@@ -1,4 +1,4 @@
-.cabecalhoadm{
+.cabecalhoadm {
     display: flex;
     flex-direction: row;
     padding: 10px 80px;
@@ -6,40 +6,44 @@
     background-color: white;
     width: 100%;
 
-    .logo{
+
+    .logo {
         display: flex;
         flex-direction: row;
         align-items: center;
         color: #001C53;
+        font-family: "dolce";
 
-        img{
+        img {
             width: 64px;
         }
     }
 
-    .texto{
+    .texto {
         align-self: center;
         margin-left: -50px;
         color: #001C53;
     }
 
-    .sair{  
+    .sair {
         align-self: center;
     }
-        .btn-sair {
-            background-color: white; 
-            color: #001C53;
-            border: 3px solid #404F63; 
-            padding: 6px 30px; 
-            font-size: 16px; 
-            cursor: pointer; 
-            border-radius: 4px; 
-            transition: background-color 0.3s ease, color 0.3s ease; 
-        }
-        
-        .btn-sair:hover {
-            background-color: #404F63; 
-            color: white; 
-        }
-        
+
+    .btn-sair {
+        background-color: white;
+        color: #001C53;
+        border: 3px solid #404F63;
+        padding: 6px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-sair:hover {
+        background-color: #404F63;
+        color: white;
+    }
+
 }
+
