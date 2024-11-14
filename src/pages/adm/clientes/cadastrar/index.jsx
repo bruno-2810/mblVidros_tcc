@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Cabecalhoadm from '../../components/cabecalhoAdm';
 import './index.scss';
+import './responsividade.scss'
 import axios from 'axios';
 
 export default function ClientesCadastrar() {

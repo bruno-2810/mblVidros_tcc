@@ -1,8 +1,8 @@
-.pagina-cadastrarclientes{
+.pagina-cadastrarclientes {
     display: flex;
     flex-direction: column;
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -14,25 +14,22 @@
         padding: 0;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
-        .titulo{
+        .titulo {
             align-self: center;
             margin: 20px 0px 20px 0px;
-
-            h2{
-
-            }
         }
 
-        .inputs{
+        .inputs {
             display: flex;
             flex-direction: column;
 
-            .input{
+            .input {
                 display: flex;
                 flex-direction: row;
                 margin-left: 250px;
                 margin-bottom: 10px;
-                input{
+
+                input {
                     width: 200px;
                     padding: 5px;
                     border: 1px solid #ccc;
@@ -43,26 +40,27 @@
         }
     }
 
-    .botao{
+    .botao {
         align-self: center;
         margin: 20px 0px 20px 0px;
         display: flex;
         flex-direction: column;
 
-        .btn{
-            background-color: white; 
+        .btn {
+            background-color: white;
             color: #001C53;
-            border: 3px solid #404F63; 
+            border: 3px solid #404F63;
             padding: 6px 25px;
-            font-size: 12px; 
-            cursor: pointer; 
-            border-radius: 4px; 
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 4px;
             margin-bottom: 10px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            &:hover{
-                background-color: #404F63; 
-                color: white; 
+
+            &:hover {
+                background-color: #404F63;
+                color: white;
             }
         }
     }
-    }
+}

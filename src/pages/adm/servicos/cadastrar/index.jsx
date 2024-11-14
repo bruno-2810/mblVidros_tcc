@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Cabecalhoadm from '../../components/cabecalhoAdm';
 import './index.scss';
+import './responsividade.scss';
 import axios from 'axios';
 
 export default function ServicosCadastrar() {
@@ -33,10 +34,10 @@ export default function ServicosCadastrar() {
                 if (id){
                     const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`
                     console.log(token)
-                    await axios.put(url,servico)
+                    await axios.put(url, servico)
                 }else{
                     const url = `http://localhost:5100/orcamento?x-access-token=${token}`
-                    await axios.post(url,servico);
+                    await axios.post(url, servico);
                 }
                 navigate('/adm/servicos')
             } catch (error) {

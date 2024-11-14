@@ -1,4 +1,5 @@
 import './index.scss';
+import './responsividade.scss';
 import Cabecalhoadm from '../../components/cabecalhoAdm';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';

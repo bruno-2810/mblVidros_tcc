@@ -3,6 +3,7 @@ import Cabecalhoadm from '../../components/cabecalhoAdm';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './index.scss';
+import './responsividade.scss';
 
 export default function FichaServico() {
 
@@ -40,7 +41,7 @@ export default function FichaServico() {
     }, [id, token]);
 
     return (
-        <div className='pagina-fichacliente'>
+        <div className='pagina-fichaservico'>
             <Cabecalhoadm />
             <div className='container'>
                 <div className='titulo'>
