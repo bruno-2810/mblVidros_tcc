@@ -30,10 +30,10 @@ export default function ClientesCadastrar() {
         if (nome && email && telefone && endereco && insercao) {
             try {
                 if (id) {
-                    const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`
+                    const url = `http://4.172.207.208:5016/cliente/${id}?x-access-token=${token}`
                     await axios.put(url, cliente);
                 } else {
-                    const url = `http://localhost:5100/cliente?x-access-token=${token}`
+                    const url = `http://4.172.207.208:5016/cliente?x-access-token=${token}`
                     await axios.post(url, cliente);
                 }
                 navigate('/adm/clientes');
@@ -60,7 +60,7 @@ export default function ClientesCadastrar() {
     }
 
     async function carregarDadosCliente(id, token) {
-        const url = `http://localhost:5100/cliente/${id}?x-access-token=${token}`;
+        const url = `http://4.172.207.208:5016/cliente/${id}?x-access-token=${token}`;
         try {
             const resposta = await axios.get(url);
             const cliente = resposta.data;

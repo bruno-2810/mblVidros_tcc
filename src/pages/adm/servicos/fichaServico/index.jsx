@@ -15,7 +15,7 @@ export default function FichaServico() {
 
     async function buscarServicoFicha() {
         try {
-            const url = `http://localhost:5100/orcamento/${id}?x-access-token=${token}`;
+            const url = `http://4.172.207.208:5016/orcamento/${id}?x-access-token=${token}`;
             const response = await axios.get(url);
             setServico(response.data);
         } catch (error) {

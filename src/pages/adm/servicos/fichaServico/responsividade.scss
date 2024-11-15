@@ -3,12 +3,19 @@
 
         .container {
             max-width: 350px;
+            max-height: 500px;
 
             .conteudo {
-                
+                padding: 70px 10px 30px;
+                flex-direction: column;
+                gap: 20px;
+                .coluna2 {
+                    margin-top: 0px;
+                }
                 p {
                     font-size: 15px;
                 }
+
             }
         }
     }
